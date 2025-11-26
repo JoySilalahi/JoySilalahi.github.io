@@ -20,13 +20,13 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #eaf6ff; /* light blue background */
-  --default-color: #073763; /* dark blue text for body content */
-  --heading-color: #022f6b; /* deeper blue for headings */
-  --accent-color: #f2c200; /* vibrant yellow accent for buttons/links */
+:root {
+  --background-color: #ffffff; /* white background to match example */
+  --default-color: #222222; /* body text */
+  --heading-color: #111111; /* headings */
+  --accent-color: #ee3f92; /* primary pink used in right hero block */
   --surface-color: #ffffff; /* surface (cards) kept white for contrast */
-  --contrast-color: #07203a; /* dark blue used as contrast color on yellow backgrounds */
+  --contrast-color: #ffffff; /* contrast (used on pink backgrounds) */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -67,6 +67,103 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+}
+
+/*--------------------------------------------------------------
+# Hero — Mona-like large-left-title / right-image layout
+# Matches example: white background, pink right block, large left title, grayscale image
+--------------------------------------------------------------*/
+.hero.section {
+  position: relative;
+  overflow: visible;
+  padding: 6rem 0;
+  background: var(--background-color);
+  min-height: 68vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero .container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero .row.g-0 {
+  align-items: center;
+}
+
+.hero .hero-content {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 6rem;
+}
+
+.hero .hero-title {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: clamp(3.5rem, 10vw, 9.5rem);
+  line-height: 0.92;
+  margin: 0 0 1rem 0;
+  color: var(--heading-color);
+  letter-spacing: -1px;
+}
+
+.hero .lead {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero .hero-actions .btn {
+  border-radius: 24px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+}
+
+.hero .hero-media-wrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  overflow: hidden;
+}
+
+.hero .hero-media {
+  width: 88%;
+  max-width: 920px;
+  height: calc(100% - 4rem);
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.hero .hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%) contrast(1.05) brightness(0.96);
+}
+
+@media (max-width: 991.98px) {
+  .hero .hero-content { padding-left: 2rem; }
+  .hero .hero-media-wrap { position: relative; width: 100%; height: 420px; margin-top: 2rem; }
+  .hero .hero-content, .hero .hero-media-wrap { max-width: 100%; flex-basis: 100%; }
+  .hero .hero-title { font-size: clamp(2.8rem, 10vw, 5.2rem); }
+}
+
+@media (max-width: 576px) {
+  .hero { padding: 3rem 0; }
+  .hero .hero-media-wrap { height: 320px; }
+  .hero .hero-title { font-size: 3rem; line-height: 1; }
 }
 
 a {
