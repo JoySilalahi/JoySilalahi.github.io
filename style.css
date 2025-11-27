@@ -1,9 +1,11 @@
 /* =========================================
-   RESET & GLOBAL STYLES
+   1. RESET & VARIABLES
    ========================================= */
 :root {
     --primary-pink: #EB4295;
     --soft-pink-bg: #fff0f6;
+    --card-pink-bg: #FFF0F5;
+    --card-pink-border: #FFB6C1;
     --text-dark: #2c2c2c;
     --text-gray: #555555;
 }
@@ -15,289 +17,236 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+img {
+    max-width: 100%;
+    display: block;
 }
 
-body {
-    background-color: #fff;
-    overflow-x: hidden;
-    color: var(--text-dark);
-}
+html { scroll-behavior: smooth; }
+body { background-color: #fff; overflow-x: hidden; color: var(--text-dark); }
 
 /* =========================================
-   HEADER & DEKORASI
+   2. HEADER & DEKORASI
    ========================================= */
 .pink-bg {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%; /* Lebar area pink */
-    height: 100vh; /* Tinggi penuh agar pas dengan gambar */
+    top: 0; right: 0;
+    width: 50%; height: 100vh;
     background: linear-gradient(135deg, var(--primary-pink), #ff7eb3);
-    border-bottom-left-radius: 40% 20%; /* Lengkungan */
+    border-bottom-left-radius: 40% 20%;
     z-index: -1;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 50px;
-    position: relative;
-    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 25px 50px; position: relative; z-index: 100;
 }
 
-.logo {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--text-dark);
-    letter-spacing: -1px;
-}
+.logo { font-size: 26px; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; }
 .logo span { color: var(--primary-pink); }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
+nav ul { list-style: none; display: flex; gap: 30px; }
+nav a { text-decoration: none; color: #fff; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
 nav a:hover { opacity: 0.8; }
 
 /* =========================================
-   HERO SECTION (HOME) - DIPERBAIKI
+   3. HERO SECTION (HOME)
    ========================================= */
 .hero-section {
-    display: flex;
-    justify-content: space-between;
-    
-    /* PENTING: align-items flex-end agar gambar menempel ke bawah */
-    align-items: flex-end; 
-    
-    /* Tinggi area hero hampir layar penuh */
-    height: 90vh; 
-    
-    /* Hapus padding kanan/bawah agar gambar nempel pojok */
-    padding: 0 0 0 50px; 
-    
-    position: relative;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    height: 90vh; padding: 0 0 0 50px; position: relative;
 }
 
-/* Bagian Teks */
 .text-content {
-    flex: 1;
-    padding-right: 20px;
-    margin-bottom: 100px; /* Angkat sedikit agar tidak terlalu bawah */
-    
-    /* PENTING: Agar teks tetap di tengah vertikal, tidak ikut turun ke bawah */
-    align-self: center; 
+    flex: 1; padding-right: 20px; margin-bottom: 100px; align-self: center;
 }
-
 .text-content h1 {
-    font-size: 85px;
-    line-height: 1.05;
-    font-weight: 800;
-    color: var(--text-dark);
-    margin-bottom: 30px;
+    font-size: 85px; line-height: 1.05; font-weight: 800; color: var(--text-dark); margin-bottom: 30px;
 }
-
 .cta-link {
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    background-color: var(--primary-pink);
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 10px 20px -10px rgba(235, 66, 149, 0.5);
-    transition: all 0.3s ease;
+    display: inline-block; text-decoration: none; color: #fff;
+    background-color: var(--primary-pink); padding: 12px 30px; border-radius: 30px;
+    font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+    box-shadow: 0 10px 20px -10px rgba(235, 66, 149, 0.5); transition: all 0.3s ease;
 }
-.cta-link:hover {
-    transform: translateY(-3px);
-    background-color: #d63384;
-}
+.cta-link:hover { transform: translateY(-3px); background-color: #d63384; }
 
-/* Bagian Gambar (Gaya Mona) */
 .image-content {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end; /* Rata Kanan */
-    height: 100%; /* Wadah setinggi section */
-    padding-right: 0; /* Hapus padding */
+    flex: 1; display: flex; justify-content: flex-end;
+    height: 100%; padding-right: 0;
 }
-
 .image-content img {
-    height: 100%; /* Gambar mengisi tinggi penuh */
-    width: auto;  /* Lebar menyesuaikan proporsi */
-    
-    object-fit: cover; /* Potong rapi */
-    filter: grayscale(100%); /* Hitam Putih */
-    
-    /* Hapus lengkungan & bayangan agar tajam seperti contoh */
-    border-radius: 0; 
-    box-shadow: none; 
+    height: 100%; width: auto; object-fit: cover;
+    filter: grayscale(100%); border-radius: 0; box-shadow: none;
 }
 
 /* =========================================
-   ABOUT ME SECTION - DIPERBAIKI & DIPERCANTIK
+   4. ABOUT ME SECTION
    ========================================= */
 .about-section {
-    /* Gradasi background dasar yang sangat halus */
     background: linear-gradient(to bottom, #ffffff 50%, var(--soft-pink-bg) 100%);
-    padding: 120px 50px 150px 50px; /* Padding bawah lebih besar untuk ruang dekorasi */
-    position: relative;
-    overflow: hidden;
-    /* Penting: agar elemen dekorasi di dalamnya bisa diatur z-index nya */
-    z-index: 1; 
+    padding: 100px 50px; position: relative; overflow: hidden; z-index: 1;
 }
 
-/* --- DEKORASI BARU: PINK HINT (Mirip Header) --- */
-/* Ini membuat bentuk pink organik di pojok kanan bawah */
 .about-section::after {
-    content: '';
-    position: absolute;
-    bottom: -15%; /* Posisi agak keluar sedikit ke bawah */
-    right: -10%;  /* Posisi agak keluar sedikit ke kanan */
-    width: 45%;   /* Ukuran besar */
-    height: 70%;
-    /* Gradasi pink lembut */
+    content: ''; position: absolute; bottom: -15%; right: -10%;
+    width: 45%; height: 70%;
     background: linear-gradient(to top left, var(--primary-pink), var(--soft-pink-bg));
-    /* Membuat bentuk melengkung organik */
-    border-top-left-radius: 70% 60%;
-    border-bottom-left-radius: 30% 50%;
-    /* Membuatnya transparan dan blur agar halus */
-    opacity: 0.25;
-    filter: blur(40px);
-    /* Taruh di belakang konten teks/foto */
-    z-index: -1;
-    pointer-events: none; /* Agar tidak mengganggu klik */
-}
-
-.section-title {
-    font-size: 38px;
-    font-weight: 800;
-    color: var(--text-dark);
-    margin-bottom: 80px;
-    text-align: center;
-    position: relative;
-    /* Pastikan judul di atas dekorasi background */
-    z-index: 2;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 70px;
-    height: 4px;
-    background: linear-gradient(to right, var(--primary-pink), #ff9a44);
-    margin: 15px auto 0;
-    border-radius: 10px;
+    border-top-left-radius: 70% 60%; border-bottom-left-radius: 30% 50%;
+    opacity: 0.25; filter: blur(40px); z-index: -1; pointer-events: none;
 }
 
 .about-container {
-    display: flex;
-    justify-content: center;
-    /* Agar foto sejajar dengan ATAS teks */
-    align-items: flex-start; 
-    gap: 100px;
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    /* PENTING: Pastikan konten (teks & foto) berada di atas dekorasi background */
-    z-index: 2;
+    display: flex; justify-content: center; align-items: flex-start;
+    gap: 80px; max-width: 1200px; width: 100%; margin: 0 auto;
 }
 
-/* --- FOTO ABOUT ME --- */
+/* KIRI: Foto */
 .about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: 10px;
+    flex: 1; display: flex; justify-content: center;
+    position: relative; margin-top: 20px;
 }
-
-/* Efek Glow di belakang foto (dipertahankan) */
 .about-image::before {
-    content: '';
-    position: absolute;
-    top: 15px; left: 15px;
+    content: ''; position: absolute; top: 15px; left: 15px;
     width: 100%; height: 100%;
     background: linear-gradient(45deg, var(--primary-pink) 30%, #ffbc85 100%);
-    border-radius: 25px;
-    z-index: 0;
-    opacity: 0.5;
-    filter: blur(15px);
-    transition: all 0.4s ease;
+    border-radius: 25px; z-index: 0; opacity: 0.5; filter: blur(15px); transition: all 0.4s ease;
 }
-.about-image:hover::before {
-    top: 25px; left: 25px;
-    opacity: 0.7;
-    filter: blur(20px);
-}
+.about-image:hover::before { top: 25px; left: 25px; opacity: 0.7; filter: blur(20px); }
 
 .about-image img {
-    position: relative;
-    z-index: 1;
-    width: 320px;
+    position: relative; z-index: 1;
+    width: 350px; 
     height: auto;
-    border-radius: 25px;
-    border: 3px solid rgba(255, 255, 255, 0.8); /* Border putih sedikit lebih tebal */
-    box-shadow: 0 15px 35px rgba(235, 66, 149, 0.15); /* Bayangan pink halus */
+    border-radius: 25px; border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 15px 35px rgba(235, 66, 149, 0.15);
 }
 
-/* --- TEKS ABOUT ME --- */
-.about-text {
-    flex: 1.5;
+/* KANAN: Teks */
+.about-text { flex: 1.5; padding-top: 10px; }
+
+.section-title-left {
+    font-size: 38px; font-weight: 800; color: var(--text-dark); margin-bottom: 20px;
+    position: relative; display: inline-block;
 }
-.about-text h3 {
-    font-size: 16px;
-    color: var(--primary-pink);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 25px;
+.section-title-left::after {
+    content: ''; display: block; width: 60px; height: 4px;
+    background: linear-gradient(to right, var(--primary-pink), #ff9a44);
+    margin-top: 5px; border-radius: 10px;
 }
-.about-text p {
-    color: var(--text-gray);
-    line-height: 1.9;
-    margin-bottom: 20px;
-    font-size: 15px;
+.description {
+    color: var(--text-gray); line-height: 1.8; margin-bottom: 40px; font-size: 16px;
 }
 
-/* Info Tags */
-.about-info {
-    margin-top: 40px;
+/* --- FIX: UKURAN MINI CARDS (SQUARE 160px) --- */
+.mini-cards {
     display: flex;
+    gap: 15px;
     flex-wrap: wrap;
+}
+
+.card-item {
+    /* MENGUNCI UKURAN KOTAK */
+    width: 160px;
+    height: 160px;
+
+    background-color: var(--card-pink-bg);
+    border: 1px solid var(--card-pink-border);
+    border-radius: 18px;
+    
+    /* Pengaturan Isi Tengah */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    box-shadow: 0 5px 15px rgba(235, 66, 149, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    background-color: #fff;
+    border-color: var(--primary-pink);
+    box-shadow: 0 15px 30px rgba(235, 66, 149, 0.15);
+}
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    box-shadow: 0 8px 15px rgba(235, 66, 149, 0.25);
+}
+
+.card-icon svg {
+    stroke: #fff;
+    width: 22px;
+    height: 22px;
+}
+
+.card-item h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.card-item p {
+    font-size: 11px;
+    color: var(--text-gray);
+    line-height: 1.3;
+    margin-bottom: 0;
+    padding: 0 2px;
+}
+
+/* --- ABOUT INFO (STACKED PILLS DENGAN HOVER) --- */
+.about-info {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; /* Susun ke bawah */
+    align-items: flex-start;
     gap: 15px;
 }
-.about-info span {
-    background: #fff;
-    color: var(--text-dark);
+
+.info-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #fff;
     padding: 12px 25px;
     border-radius: 50px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    color: var(--text-dark);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    
+    /* Border transparan default */
     border: 1px solid transparent;
 }
-.about-info span:hover {
-    transform: translateY(-5px);
+
+/* Warna icon default (abu) */
+.info-item svg {
+    stroke: #555;
+    transition: 0.3s ease;
+}
+
+/* EFEK HOVER: Muncul border pink & text pink */
+.info-item:hover {
+    transform: translateX(5px);
+    border: 1px solid var(--primary-pink);
     color: var(--primary-pink);
-    border-color: var(--primary-pink);
-    box-shadow: 0 10px 25px rgba(235, 66, 149, 0.2);
+    box-shadow: 0 8px 25px rgba(235, 66, 149, 0.15);
+}
+
+.info-item:hover svg {
+    stroke: var(--primary-pink);
 }
