@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experiences - Joy Silalahi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pink-bg"></div>
+    <header>
+        <div class="logo">Portfolio<span>.</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="work-experiences.html" class="active">Work Experiences</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="work-experiences">
+        <div class="work-header">
+            <div>
+                <h1 class="work-title">Professional Journey</h1>
+                <p class="work-sub">Selected roles and responsibilities — a concise timeline of careers.</p>
+            </div>
+            <div>
+                <p style="color:var(--text-gray);">Showing key roles and academic milestones.</p>
+            </div>
+        </div>
+
+        <div class="work-grid">
+            <!-- Left: Professional cards -->
+            <section class="professional">
+                <article class="job-card">
+                    <div class="job-meta">
+                        <div>
+                            <h3>Technical Director</h3>
+                            <div class="job-company">Proin Corporation</div>
+                        </div>
+                        <div class="job-badge">2022 - Present</div>
+                    </div>
+                    <p class="job-desc">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra veniam sit amet lacus cursus.</p>
+                    <ul>
+                        <li>Managed cross-functional teams of 15+ professionals</li>
+                        <li>Implemented agile methodologies resulting in 40% efficiency gain</li>
+                        <li>Led digital transformation initiatives worth $2M+</li>
+                    </ul>
+                </article>
+
+                <article class="job-card">
+                    <div class="job-meta">
+                        <div>
+                            <h3>Senior Development Manager</h3>
+                            <div class="job-company">Consectetur Solutions Inc</div>
+                        </div>
+                        <div class="job-badge">2018 - 2022</div>
+                    </div>
+                    <p class="job-desc">Donec quam felis ultricies nec pellentesque eu pretium quis sem nulla consequat massa quis enim.</p>
+                </article>
+
+                <article class="job-card">
+                    <div class="job-meta">
+                        <div>
+                            <h3>Front-End Engineer</h3>
+                            <div class="job-company">Adept UI Studio</div>
+                        </div>
+                        <div class="job-badge">2015 - 2018</div>
+                    </div>
+                    <p class="job-desc">Worked on responsive design systems and component libraries used across products.</p>
+                </article>
+            </section>
+
+            <!-- Right: Academic timeline -->
+            <aside class="academic">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <h4>Master of Computer Science</h4>
+                            <div class="timeline-meta">Tempus University — <span class="badge">2015 - 2017</span></div>
+                            <p class="timeline-desc">Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec quam felis ultricies nec.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <h4>Bachelor of Information Technology</h4>
+                            <div class="timeline-meta">Rhoncus Institute of Technology — <span class="badge">2011 - 2015</span></div>
+                            <p class="timeline-desc">Nullam dictum felis eu pede mollis pretium integer tincidunt cras dapibus vivamus elementum semper nisi aenean vulputate.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <h4>Certificate in Digital Innovation</h4>
+                            <div class="timeline-meta">Ligula Academy — <span class="badge">2020</span></div>
+                            <p class="timeline-desc">Etiam sit amet orci eget eros faucibus tincidunt duis leo sed fringilla mauris sit amet nibh.</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience & Education - Joy Valeda Silalahi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .exp-page {
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #ffffff 30%, var(--soft-pink-bg) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .exp-page::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 60%; height: 80vh;
+            background: linear-gradient(135deg, var(--primary-pink), #ff99cc);
+            border-bottom-left-radius: 50% 30%;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        .timeline-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 120px 20px;
+        }
+        .exp-title {
+            text-align: center;
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 70px;
+            color: var(--text-dark);
+        }
+        .exp-title span { color: var(--primary-pink); }
+        .exp-title::after {
+            content: '';
+            display: block;
+            width: 90px;
+            height: 5px;
+            background: var(--primary-pink);
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-pink), #ffb6d4);
+            border-radius: 3px;
+            z-index: 0;
+        }
+        .tl-item {
+            width: 50%;
+            padding: 20px 50px;
+            position: relative;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+        .tl-item:nth-child(odd) { left: 0; }
+        .tl-item:nth-child(even) { left: 50%; }
+
+        .tl-item::after {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background: white;
+            border: 6px solid var(--primary-pink);
+            border-radius: 50%;
+            top: 35px;
+            z-index: 1;
+            box-shadow: 0 0 0 6px rgba(235,66,149,.25);
+        }
+        .tl-item:nth-child(odd)::after { right: -13px; }
+        .tl-item:nth-child(even)::after { left: -13px; }
+
+        .tl-content {
+            background: white;
+            padding: 32px 35px;
+            border-radius: 20px;
+            border: 1px solid var(--card-pink-border);
+            box-shadow: 0 15px 35px rgba(235,66,149,.12);
+            transition: all 0.3s ease;
+        }
+        .tl-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(235,66,149,.2);
+        }
+        .tl-content h3 {
+            color: var(--primary-pink);
+            font-size: 23px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .tl-content .place {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .tl-content .date {
+            display: inline-block;
+            background: var(--primary-pink);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+        .tl-content p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .tl-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .tl-content ul li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 12px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        .tl-content ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-pink);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before { left: 35px; }
+            .tl-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 20px;
+                left: 0 !important;
+                margin-bottom: 60px;
+            }
+            .tl-item::after { left: 22px !important; }
+            .exp-title { font-size: 36px; }
+        }
+    </style>
+</head>
+<body class="exp-page">
+
+    <div class="pink-bg"></div>
+
+    <header>
+        <div class="logo">Portfolio<span>.</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="work-experiences.html">Work Experiences</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="timeline-wrap">
+        <h2 class="exp-title">Professional <span>Journey</span></h2>
+
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-content">
+                    <h3>Technical Director</h3>
+                    <div class="place">Proin Corporation</div>
+                    <span class="date">2022 – Present</span>
+                    <p>Memimpin transformasi digital perusahaan dengan fokus pada skalabilitas dan efisiensi operasional.</p>
+                    <ul>
+                        <li>Memimpin tim lintas fungsi 15+ profesional</li>
+                        <li>Menerapkan metodologi Agile</li>
+                        <li>Inisiatif digital senilai $2M+</li>
+                    </ul>
+                    </div>
+                </div>
+
+            <div class="tl-item">
+                <div class="tl-content">
+                    <h3>Senior Development Manager</h3>
+                    <div class="place">Consectetur Solutions Inc</div>
+                    <span class="date">2018 – 2022</span>
+                    <p>Mengembangkan solusi enterprise berbasis cloud dengan React & Node.js.</p>
+                </div>
+            </div>
+            <!-- Tambah lagi kalau mau -->
+        </div>
+    </div>
+
+</body>
+</html>
